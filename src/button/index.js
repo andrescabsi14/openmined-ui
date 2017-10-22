@@ -1,8 +1,29 @@
 import React from 'react';
+import cn from 'classnames'
 import './buttons.css'
-const Button = props => {
+
+const Button = ({
+  children,
+  size,
+  color,
+  status,
+  expanded,
+  centered
+}) => {
+
+  const classes = cn(
+    size,
+    color,
+    status,
+    {
+      expanded,
+      centered
+    }
+  )
   return (
-    <span>I need to be implemented</span>
+    <button className={classes}>
+      {children}
+    </button>
   );
 };
 

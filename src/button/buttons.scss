@@ -57,10 +57,11 @@ input[type='submit'] {
     font-size: $button-font-size * 1.2;
     padding: $button-padding * 1.2;
   }
-  &.expand {
+  &.expanded {
     width: 100%;
   }
   &.centered {
+    display: block;
     margin: 0px auto $small-space auto;
   }
   &[disabled] {
