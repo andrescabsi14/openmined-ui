@@ -1,0 +1,68 @@
+.alert-horizontal-gradient {
+  background: linear-gradient(to right, #c3707c 0%, #ef996b 100%); }
+
+.alert-diagonal-gradient {
+  background: linear-gradient(135deg, #c3707c 0%, #ef996b 100%); }
+
+.warning-horizontal-gradient {
+  background: linear-gradient(to right, #ef996b 0%, #f1bf7a 100%); }
+
+.warning-diagonal-gradient {
+  background: linear-gradient(135deg, #ef996b 0%, #f1bf7a 100%); }
+
+.success-horizontal-gradient {
+  background: linear-gradient(to right, #9bcc9a 0%, #5cb5a4 100%); }
+
+.success-diagonal-gradient {
+  background: linear-gradient(135deg, #9bcc9a 0%, #5cb5a4 100%); }
+
+.primary-horizontal-gradient {
+  background: linear-gradient(to right, #62a4ae 0%, #767ea1 100%); }
+
+.primary-diagonal-gradient {
+  background: linear-gradient(135deg, #62a4ae 0%, #767ea1 100%); }
+
+#notifications {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  margin: 0px;
+  padding: 0px 10px;
+  z-index: 4;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%; }
+  @media (min-width: 640px) {
+    #notifications {
+      width: 300px; } }
+  #notifications .notification {
+    position: relative;
+    background: #62a4ae;
+    color: #fff;
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: default; }
+    #notifications .notification.success {
+      background: #9bcc9a;
+      color: #000; }
+      #notifications .notification.success .close {
+        background: #8ac389;
+        color: #000; }
+    #notifications .notification.error {
+      background: #c3707c; }
+      #notifications .notification.error .close {
+        background: #bb5e6c; }
+    #notifications .notification .close {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 100%;
+      width: 20px;
+      padding: 0px;
+      background: #5498a3;
+      color: #fff;
+      border: 0px;
+      border-radius: 5px 0px 0px 5px;
+      cursor: pointer; }

@@ -1,6 +1,6 @@
-@import './general';
-@import './media-queries';
-@import './colors';
+@import '../general';
+@import '../media-queries';
+
 // Variables
 $header-lineheight: 1.4;
 $header-styles: (h1: 48px, h2: 40px, h3: 32px, h4: 26px, h5: 20px, h6: 16px);

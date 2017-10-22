@@ -1,0 +1,30 @@
+@keyframes fades {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.background-gradient {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(#ffc474, transparent), linear-gradient(90deg, #ab3a7b, transparent), linear-gradient(-90deg, #addda4, transparent), linear-gradient(0deg, #509fb6, transparent);
+  background-blend-mode: multiply;
+  filter: brightness(150%); }
+  .background-gradient.animated:after {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(#ffc474, transparent), linear-gradient(90deg, #ab3a7b, transparent), linear-gradient(-90deg, #addda4, transparent), linear-gradient(0deg, #509fb6, transparent);
+    background-blend-mode: multiply;
+    filter: brightness(150%);
+    animation: fades 20s ease-in-out infinite;
+    content: ''; }

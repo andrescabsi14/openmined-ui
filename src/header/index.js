@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import logomark from '../../assets/logomark.svg';
+// import logomark from '../../assets/logomark.svg';
 import links from './links';
 
 import './header.css';
@@ -19,7 +19,7 @@ const activeLink = (to, current) => (to === current ? 'active ' : '');
 const Title = props => (
   <div className="title">
     <Link to={props.authenticated ? '/mine' : '/'}>
-      <img src={logomark} id="logo" alt="OpenMined" />
+      {/* <img src={logomark} id="logo" alt="OpenMined" /> */}
     </Link>
   </div>
 );
