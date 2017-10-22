@@ -1,0 +1,417 @@
+/*
+  Based on: http://flexboxgrid.com/
+  Grid system ported to SASS by: Patrick Cason <me@patrickcason.com>
+
+  Row classes:
+    - reverse
+    - small, medium, large, xlarge
+      - BREAK-start
+      - BREAK-center
+      - BREAK-end
+      - BREAK-top
+      - BREAK-middle
+      - BREAK-bottom
+      - BREAK-around
+      - BREAK-between
+
+  Column classes:
+    - small, medium, large, xlarge
+      - BREAK-[1 thru # of columns]
+      - BREAK-offset-[1 thru # of columns]
+      - BREAK-auto
+      - BREAK-first
+      - BREAK-last
+
+  Features:
+    - Dynamic number of columns
+    - Full @media breakpoint support
+    - Nesting
+    - Auto-width columns
+    - Offsets
+    - Standard flexbox parent element controls (justify-content & align-items)
+    - Order overrides
+    - Child order reversal
+    - 100% flexbox compliant
+*/
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%; }
+  @media (min-width: 1024px) {
+    .container {
+      width: 1000px; } }
+  @media (min-width: 1440px) {
+    .container {
+      width: 1400px; } }
+  @media (min-width: 1024px) {
+    .container.full {
+      width: 100%; } }
+  .container .row {
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px; }
+    .container .row.small-start {
+      justify-content: flex-start;
+      text-align: start; }
+    .container .row.small-center {
+      justify-content: center;
+      text-align: center; }
+    .container .row.small-end {
+      justify-content: flex-end;
+      text-align: end; }
+    .container .row.small-top {
+      align-items: flex-start; }
+    .container .row.small-middle {
+      align-items: center; }
+    .container .row.small-bottom {
+      align-items: flex-end; }
+    .container .row.small-around {
+      justify-content: space-around; }
+    .container .row.small-between {
+      justify-content: space-between; }
+    @media (min-width: 640px) {
+      .container .row.medium-start {
+        justify-content: flex-start;
+        text-align: start; }
+      .container .row.medium-center {
+        justify-content: center;
+        text-align: center; }
+      .container .row.medium-end {
+        justify-content: flex-end;
+        text-align: end; }
+      .container .row.medium-top {
+        align-items: flex-start; }
+      .container .row.medium-middle {
+        align-items: center; }
+      .container .row.medium-bottom {
+        align-items: flex-end; }
+      .container .row.medium-around {
+        justify-content: space-around; }
+      .container .row.medium-between {
+        justify-content: space-between; } }
+    @media (min-width: 1024px) {
+      .container .row.large-start {
+        justify-content: flex-start;
+        text-align: start; }
+      .container .row.large-center {
+        justify-content: center;
+        text-align: center; }
+      .container .row.large-end {
+        justify-content: flex-end;
+        text-align: end; }
+      .container .row.large-top {
+        align-items: flex-start; }
+      .container .row.large-middle {
+        align-items: center; }
+      .container .row.large-bottom {
+        align-items: flex-end; }
+      .container .row.large-around {
+        justify-content: space-around; }
+      .container .row.large-between {
+        justify-content: space-between; } }
+    @media (min-width: 1440px) {
+      .container .row.xlarge-start {
+        justify-content: flex-start;
+        text-align: start; }
+      .container .row.xlarge-center {
+        justify-content: center;
+        text-align: center; }
+      .container .row.xlarge-end {
+        justify-content: flex-end;
+        text-align: end; }
+      .container .row.xlarge-top {
+        align-items: flex-start; }
+      .container .row.xlarge-middle {
+        align-items: center; }
+      .container .row.xlarge-bottom {
+        align-items: flex-end; }
+      .container .row.xlarge-around {
+        justify-content: space-around; }
+      .container .row.xlarge-between {
+        justify-content: space-between; } }
+    .container .row.reverse {
+      flex-direction: row-reverse; }
+    .container .row .column {
+      box-sizing: border-box;
+      flex: 0 0 auto;
+      padding-right: 15px;
+      padding-left: 15px; }
+      .container .row .column.small-1 {
+        flex-basis: 8.33333%;
+        max-width: 8.33333%; }
+      .container .row .column.small-offset-1 {
+        margin-left: 8.33333%; }
+      .container .row .column.small-2 {
+        flex-basis: 16.66667%;
+        max-width: 16.66667%; }
+      .container .row .column.small-offset-2 {
+        margin-left: 16.66667%; }
+      .container .row .column.small-3 {
+        flex-basis: 25%;
+        max-width: 25%; }
+      .container .row .column.small-offset-3 {
+        margin-left: 25%; }
+      .container .row .column.small-4 {
+        flex-basis: 33.33333%;
+        max-width: 33.33333%; }
+      .container .row .column.small-offset-4 {
+        margin-left: 33.33333%; }
+      .container .row .column.small-5 {
+        flex-basis: 41.66667%;
+        max-width: 41.66667%; }
+      .container .row .column.small-offset-5 {
+        margin-left: 41.66667%; }
+      .container .row .column.small-6 {
+        flex-basis: 50%;
+        max-width: 50%; }
+      .container .row .column.small-offset-6 {
+        margin-left: 50%; }
+      .container .row .column.small-7 {
+        flex-basis: 58.33333%;
+        max-width: 58.33333%; }
+      .container .row .column.small-offset-7 {
+        margin-left: 58.33333%; }
+      .container .row .column.small-8 {
+        flex-basis: 66.66667%;
+        max-width: 66.66667%; }
+      .container .row .column.small-offset-8 {
+        margin-left: 66.66667%; }
+      .container .row .column.small-9 {
+        flex-basis: 75%;
+        max-width: 75%; }
+      .container .row .column.small-offset-9 {
+        margin-left: 75%; }
+      .container .row .column.small-10 {
+        flex-basis: 83.33333%;
+        max-width: 83.33333%; }
+      .container .row .column.small-offset-10 {
+        margin-left: 83.33333%; }
+      .container .row .column.small-11 {
+        flex-basis: 91.66667%;
+        max-width: 91.66667%; }
+      .container .row .column.small-offset-11 {
+        margin-left: 91.66667%; }
+      .container .row .column.small-12 {
+        flex-basis: 100%;
+        max-width: 100%; }
+      .container .row .column.small-offset-12 {
+        margin-left: 100%; }
+      .container .row .column.small-auto {
+        flex-grow: 1;
+        flex-basis: 0;
+        max-width: 100%; }
+      .container .row .column.small-first {
+        order: -1; }
+      .container .row .column.small-last {
+        order: 1; }
+      @media (min-width: 640px) {
+        .container .row .column.medium-1 {
+          flex-basis: 8.33333%;
+          max-width: 8.33333%; }
+        .container .row .column.medium-offset-1 {
+          margin-left: 8.33333%; }
+        .container .row .column.medium-2 {
+          flex-basis: 16.66667%;
+          max-width: 16.66667%; }
+        .container .row .column.medium-offset-2 {
+          margin-left: 16.66667%; }
+        .container .row .column.medium-3 {
+          flex-basis: 25%;
+          max-width: 25%; }
+        .container .row .column.medium-offset-3 {
+          margin-left: 25%; }
+        .container .row .column.medium-4 {
+          flex-basis: 33.33333%;
+          max-width: 33.33333%; }
+        .container .row .column.medium-offset-4 {
+          margin-left: 33.33333%; }
+        .container .row .column.medium-5 {
+          flex-basis: 41.66667%;
+          max-width: 41.66667%; }
+        .container .row .column.medium-offset-5 {
+          margin-left: 41.66667%; }
+        .container .row .column.medium-6 {
+          flex-basis: 50%;
+          max-width: 50%; }
+        .container .row .column.medium-offset-6 {
+          margin-left: 50%; }
+        .container .row .column.medium-7 {
+          flex-basis: 58.33333%;
+          max-width: 58.33333%; }
+        .container .row .column.medium-offset-7 {
+          margin-left: 58.33333%; }
+        .container .row .column.medium-8 {
+          flex-basis: 66.66667%;
+          max-width: 66.66667%; }
+        .container .row .column.medium-offset-8 {
+          margin-left: 66.66667%; }
+        .container .row .column.medium-9 {
+          flex-basis: 75%;
+          max-width: 75%; }
+        .container .row .column.medium-offset-9 {
+          margin-left: 75%; }
+        .container .row .column.medium-10 {
+          flex-basis: 83.33333%;
+          max-width: 83.33333%; }
+        .container .row .column.medium-offset-10 {
+          margin-left: 83.33333%; }
+        .container .row .column.medium-11 {
+          flex-basis: 91.66667%;
+          max-width: 91.66667%; }
+        .container .row .column.medium-offset-11 {
+          margin-left: 91.66667%; }
+        .container .row .column.medium-12 {
+          flex-basis: 100%;
+          max-width: 100%; }
+        .container .row .column.medium-offset-12 {
+          margin-left: 100%; }
+        .container .row .column.medium-auto {
+          flex-grow: 1;
+          flex-basis: 0;
+          max-width: 100%; }
+        .container .row .column.medium-first {
+          order: -1; }
+        .container .row .column.medium-last {
+          order: 1; } }
+      @media (min-width: 1024px) {
+        .container .row .column.large-1 {
+          flex-basis: 8.33333%;
+          max-width: 8.33333%; }
+        .container .row .column.large-offset-1 {
+          margin-left: 8.33333%; }
+        .container .row .column.large-2 {
+          flex-basis: 16.66667%;
+          max-width: 16.66667%; }
+        .container .row .column.large-offset-2 {
+          margin-left: 16.66667%; }
+        .container .row .column.large-3 {
+          flex-basis: 25%;
+          max-width: 25%; }
+        .container .row .column.large-offset-3 {
+          margin-left: 25%; }
+        .container .row .column.large-4 {
+          flex-basis: 33.33333%;
+          max-width: 33.33333%; }
+        .container .row .column.large-offset-4 {
+          margin-left: 33.33333%; }
+        .container .row .column.large-5 {
+          flex-basis: 41.66667%;
+          max-width: 41.66667%; }
+        .container .row .column.large-offset-5 {
+          margin-left: 41.66667%; }
+        .container .row .column.large-6 {
+          flex-basis: 50%;
+          max-width: 50%; }
+        .container .row .column.large-offset-6 {
+          margin-left: 50%; }
+        .container .row .column.large-7 {
+          flex-basis: 58.33333%;
+          max-width: 58.33333%; }
+        .container .row .column.large-offset-7 {
+          margin-left: 58.33333%; }
+        .container .row .column.large-8 {
+          flex-basis: 66.66667%;
+          max-width: 66.66667%; }
+        .container .row .column.large-offset-8 {
+          margin-left: 66.66667%; }
+        .container .row .column.large-9 {
+          flex-basis: 75%;
+          max-width: 75%; }
+        .container .row .column.large-offset-9 {
+          margin-left: 75%; }
+        .container .row .column.large-10 {
+          flex-basis: 83.33333%;
+          max-width: 83.33333%; }
+        .container .row .column.large-offset-10 {
+          margin-left: 83.33333%; }
+        .container .row .column.large-11 {
+          flex-basis: 91.66667%;
+          max-width: 91.66667%; }
+        .container .row .column.large-offset-11 {
+          margin-left: 91.66667%; }
+        .container .row .column.large-12 {
+          flex-basis: 100%;
+          max-width: 100%; }
+        .container .row .column.large-offset-12 {
+          margin-left: 100%; }
+        .container .row .column.large-auto {
+          flex-grow: 1;
+          flex-basis: 0;
+          max-width: 100%; }
+        .container .row .column.large-first {
+          order: -1; }
+        .container .row .column.large-last {
+          order: 1; } }
+      @media (min-width: 1440px) {
+        .container .row .column.xlarge-1 {
+          flex-basis: 8.33333%;
+          max-width: 8.33333%; }
+        .container .row .column.xlarge-offset-1 {
+          margin-left: 8.33333%; }
+        .container .row .column.xlarge-2 {
+          flex-basis: 16.66667%;
+          max-width: 16.66667%; }
+        .container .row .column.xlarge-offset-2 {
+          margin-left: 16.66667%; }
+        .container .row .column.xlarge-3 {
+          flex-basis: 25%;
+          max-width: 25%; }
+        .container .row .column.xlarge-offset-3 {
+          margin-left: 25%; }
+        .container .row .column.xlarge-4 {
+          flex-basis: 33.33333%;
+          max-width: 33.33333%; }
+        .container .row .column.xlarge-offset-4 {
+          margin-left: 33.33333%; }
+        .container .row .column.xlarge-5 {
+          flex-basis: 41.66667%;
+          max-width: 41.66667%; }
+        .container .row .column.xlarge-offset-5 {
+          margin-left: 41.66667%; }
+        .container .row .column.xlarge-6 {
+          flex-basis: 50%;
+          max-width: 50%; }
+        .container .row .column.xlarge-offset-6 {
+          margin-left: 50%; }
+        .container .row .column.xlarge-7 {
+          flex-basis: 58.33333%;
+          max-width: 58.33333%; }
+        .container .row .column.xlarge-offset-7 {
+          margin-left: 58.33333%; }
+        .container .row .column.xlarge-8 {
+          flex-basis: 66.66667%;
+          max-width: 66.66667%; }
+        .container .row .column.xlarge-offset-8 {
+          margin-left: 66.66667%; }
+        .container .row .column.xlarge-9 {
+          flex-basis: 75%;
+          max-width: 75%; }
+        .container .row .column.xlarge-offset-9 {
+          margin-left: 75%; }
+        .container .row .column.xlarge-10 {
+          flex-basis: 83.33333%;
+          max-width: 83.33333%; }
+        .container .row .column.xlarge-offset-10 {
+          margin-left: 83.33333%; }
+        .container .row .column.xlarge-11 {
+          flex-basis: 91.66667%;
+          max-width: 91.66667%; }
+        .container .row .column.xlarge-offset-11 {
+          margin-left: 91.66667%; }
+        .container .row .column.xlarge-12 {
+          flex-basis: 100%;
+          max-width: 100%; }
+        .container .row .column.xlarge-offset-12 {
+          margin-left: 100%; }
+        .container .row .column.xlarge-auto {
+          flex-grow: 1;
+          flex-basis: 0;
+          max-width: 100%; }
+        .container .row .column.xlarge-first {
+          order: -1; }
+        .container .row .column.xlarge-last {
+          order: 1; } }

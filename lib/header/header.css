@@ -22,6 +22,30 @@
 .primary-diagonal-gradient {
   background: linear-gradient(135deg, #62a4ae 0%, #767ea1 100%); }
 
+.alert-horizontal-gradient {
+  background: linear-gradient(to right, #c3707c 0%, #ef996b 100%); }
+
+.alert-diagonal-gradient {
+  background: linear-gradient(135deg, #c3707c 0%, #ef996b 100%); }
+
+.warning-horizontal-gradient {
+  background: linear-gradient(to right, #ef996b 0%, #f1bf7a 100%); }
+
+.warning-diagonal-gradient {
+  background: linear-gradient(135deg, #ef996b 0%, #f1bf7a 100%); }
+
+.success-horizontal-gradient {
+  background: linear-gradient(to right, #9bcc9a 0%, #5cb5a4 100%); }
+
+.success-diagonal-gradient {
+  background: linear-gradient(135deg, #9bcc9a 0%, #5cb5a4 100%); }
+
+.primary-horizontal-gradient {
+  background: linear-gradient(to right, #62a4ae 0%, #767ea1 100%); }
+
+.primary-diagonal-gradient {
+  background: linear-gradient(135deg, #62a4ae 0%, #767ea1 100%); }
+
 h1,
 h2,
 h3,
@@ -199,7 +223,7 @@ b {
     #header .navigation a:hover {
       color: rgba(0, 0, 0, 0.75); }
     #header .navigation a.active {
-      color: #62a4ae; }
+      color: #323232; }
     #header .navigation a.button {
       display: inline-block;
       margin-top: 10px;
