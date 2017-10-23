@@ -28,7 +28,7 @@ const statuses = [
   'error'
 ]
 
-stories.add('with text',
+stories.add('initial',
   () => <Button
     onClick={action('clicked')}
     color={select('color', colors)}

@@ -1,4 +1,7 @@
 # OpenMined UI
+
+# BIG OL' DISCLAIMER
+### If you happen to find this while this message remains, please disregard structure and testing requirements- they will be improved!
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Chat on Slack](https://img.shields.io/badge/chat-on%20slack-7A5979.svg)](https://openmined.slack.com/messages/team_uiux)
 
@@ -10,14 +13,16 @@ Welcome to the OpenMined UI libary!  The purpose of this is to give UI developer
 ## Setup
 
 ### Prerequisites
-
+```
 node >= 8
+```
 
 ### Installation
 
-```
+```sh
 yarn add omui
 ```
+
 
 ## Usage
 
@@ -35,7 +40,7 @@ export default class ComponentWithButton extends Component {
 
 ## Development
 
-```
+```sh
 yarn
 yarn build-storybook
 yarn storybook

@@ -8,10 +8,13 @@ const Button = ({
   color,
   status,
   expanded,
-  centered
+  centered,
+  className,
+  ...otherProps
 }) => {
 
   const classes = cn(
+    className,
     size,
     color,
     status,
@@ -21,7 +24,7 @@ const Button = ({
     }
   )
   return (
-    <button className={classes}>
+    <button className={classes} {...otherProps}>
       {children}
     </button>
   );
