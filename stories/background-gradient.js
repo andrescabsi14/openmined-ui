@@ -1,17 +1,15 @@
-import React from 'react';
+// @flow
+import React from "react";
 
-import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { storiesOf } from "@storybook/react";
+import { withKnobs, boolean } from "@storybook/addon-knobs";
 
-import { BackgroundGradient } from '../src/index.js';
+import { BackgroundGradient } from "../src/index.js";
 
-const stories = storiesOf('BackgroundGradient', module);
+const stories = storiesOf("BackgroundGradient", module);
 
 stories.addDecorator(withKnobs);
 
-
-stories.add('initial',
-  () => <BackgroundGradient
-    animated={boolean('animated', false)}
-  />
-)
+stories.add("initial", () => (
+  <BackgroundGradient animated={boolean("animated", false)} />
+));

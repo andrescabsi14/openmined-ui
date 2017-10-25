@@ -1,28 +1,41 @@
-import React from 'react';
-import cn from 'classnames'
-import './buttons.css'
+// @flow
+import * as React from "react";
+import cn from "classnames";
+import "./index.css";
+
+type DefaultProps = {
+  size: "small" | "medium" | "large",
+  color:
+    | "light-gray"
+    | "medium-grey"
+    | "dark-gray"
+    | "black"
+    | "white"
+    | "teal",
+  expanded: boolean,
+  centered: boolean
+};
+
+type Props = DefaultProps & {
+  children: React.Node,
+  className?: string,
+  status?: "error" | "success"
+};
 
 const Button = ({
   children,
-  size,
-  color,
+  size = "medium",
+  color = "teal",
   status,
-  expanded,
-  centered,
+  expanded = false,
+  centered = false,
   className,
   ...otherProps
-}) => {
-
-  const classes = cn(
-    className,
-    size,
-    color,
-    status,
-    {
-      expanded,
-      centered
-    }
-  )
+}: Props) => {
+  const classes = cn(className, size, color, status, {
+    expanded,
+    centered
+  });
   return (
     <button className={classes} {...otherProps}>
       {children}

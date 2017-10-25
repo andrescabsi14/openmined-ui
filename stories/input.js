@@ -1,12 +1,10 @@
-import React from 'react';
+// @flow
+import React from "react";
 
-import { storiesOf } from '@storybook/react';
+import { storiesOf } from "@storybook/react";
 
-import { Input } from '../src/index.js';
+import { Input } from "../src/index.js";
 
-const stories = storiesOf('Input', module);
+const stories = storiesOf("Input", module);
 
-
-stories.add('initial',
-  () => <Input />
-)
+stories.add("initial", () => <Input />);

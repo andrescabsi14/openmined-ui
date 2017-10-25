@@ -1,12 +1,13 @@
 {
-  "name": "omui",
+  "name": "openmined-ui",
   "homepage": "https://openmined.org",
-  "version": "0.1.1",
+  "version": "0.0.1",
   "private": false,
   "license": "Apache-2.0",
   "main": "lib/index",
   "module": "es6/index",
   "jsnext:main": "es6/index",
+  "contributors": ["Kevin Huber <kevinahuber@gmail.com>"],
   "dependencies": {
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
@@ -60,31 +61,25 @@
     "whatwg-fetch": "2.0.3"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
+    "src/**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
   },
   "scripts": {
     "precommit": "lint-staged",
-    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "watch-css": "yarn build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "start-js": "node scripts/start.js",
-    "start": "npm-run-all -p watch-css start-js",
-    "build": "yarn build-css && node scripts/build.js",
-    "lib": "babel src --out-dir lib --copy-files",
+    "build:css":
+      "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch:css":
+      "yarn build:css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start": "storybook",
+    "build": "yarn build:css && node scripts/build.js",
+    "lib": "babel src --out-dir lib --copy-files --ignore *.scss",
     "test": "node scripts/test.js --env=jsdom",
-    "storybook": "npm-run-all -p watch-css start-storybook",
-    "start-storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "npm-run-all -p watch:css start:storybook",
+    "start:storybook": "start-storybook -p 9000",
+    "build:storybook": "build-storybook"
   },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
+    "setupFiles": ["<rootDir>/config/polyfills.js"],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
@@ -96,25 +91,14 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ]
+    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx", "node"]
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": ["react-app"]
   },
   "eslintConfig": {
     "extends": "react-app"

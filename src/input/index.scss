@@ -1,0 +1,17 @@
+@import "../typography";
+@import "../colors";
+@import "../general";
+
+// TODO: More specific selectors
+input,
+select {
+  padding: $medium-space;
+  background: $white;
+  border: 2px solid lighten($light-gray, 10%);
+  border-radius: $border-radius;
+  font-family: $body-font;
+  transition: border $anim-time $anim-func;
+  &:focus {
+    border: 2px solid $medium-gray;
+  }
+}

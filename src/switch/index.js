@@ -1,31 +1,26 @@
-import React from 'react';
-import cn from 'classnames'
-import './switch.css'
+// @flow
+import * as React from "react";
+import cn from "classnames";
+import "./index.css";
 
-const Button = ({
-  label,
-  className,
-  inputClassName,
-  ...otherProps
-}) => {
+type Props = HTMLInputElement & {
+  label?: React.Node,
+  className?: string,
+  inputClassName?: string
+};
 
-  const classes = cn(
-    className,
-    'switch-container'
-  )
+const Switch = ({ label, className, inputClassName, ...otherProps }: Props) => {
+  const classes = cn(className, "switch-container");
   return (
     <div className={classes}>
       {label && <p className="switch-label">{label}</p>}
       <label className="switch">
-        <input
-          type="checkbox"
-          className={inputClassName}
-          {...otherProps}
-        />
+        {/* $FlowFixMe: Unsure why this isn't working */}
+        <input type="checkbox" className={inputClassName} {...otherProps} />
         <span className="slider" />
       </label>
     </div>
   );
 };
 
-export default Button;
+export default Switch;

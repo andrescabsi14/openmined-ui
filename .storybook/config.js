@@ -1,26 +1,25 @@
 
 import React from 'react'
 import {configure, addDecorator } from '@storybook/react'
-import { ConnectedRouter } from 'react-router-redux';
-import Header from '../src/header/index.js'
+// import { ConnectedRouter } from 'react-router-redux';
+// import Header from '../src/header/index.js'
 // import { Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store, { history } from '../src/store.js';
+// import { Provider } from 'react-redux';
+// import store, { history } from '../src/store.js';
 
 const req = require.context('../stories', true, /\.js$/)
 
 const layout = children => (
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
+  // <Provider>
+    // <ConnectedRouter>
       <div>
-        <Header />
-        <div style={{paddingTop: 100}}>
+        {/* <Header /> */}
+        <div style={{ padding: '50px 50px' }}>
           {children}
-
         </div>
       </div>
-    </ConnectedRouter>
-  </Provider>
+    // </ConnectedRouter>
+  // </Provider>
 )
 
 addDecorator(story => {

@@ -389,28 +389,28 @@ template {
 [hidden] {
   display: none; }
 
-.alert-horizontal-gradient {
+.alert-horiz-gradient {
   background: linear-gradient(to right, #c3707c 0%, #ef996b 100%); }
 
-.alert-diagonal-gradient {
+.alert-diag-gradient {
   background: linear-gradient(135deg, #c3707c 0%, #ef996b 100%); }
 
-.warning-horizontal-gradient {
+.warning-horiz-gradient {
   background: linear-gradient(to right, #ef996b 0%, #f1bf7a 100%); }
 
-.warning-diagonal-gradient {
+.warning-diag-gradient {
   background: linear-gradient(135deg, #ef996b 0%, #f1bf7a 100%); }
 
-.success-horizontal-gradient {
+.success-horiz-gradient {
   background: linear-gradient(to right, #9bcc9a 0%, #5cb5a4 100%); }
 
-.success-diagonal-gradient {
+.success-diag-gradient {
   background: linear-gradient(135deg, #9bcc9a 0%, #5cb5a4 100%); }
 
-.primary-horizontal-gradient {
+.primary-horiz-gradient {
   background: linear-gradient(to right, #62a4ae 0%, #767ea1 100%); }
 
-.primary-diagonal-gradient {
+.primary-diag-gradient {
   background: linear-gradient(135deg, #62a4ae 0%, #767ea1 100%); }
 
 html {
@@ -438,28 +438,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden; }
 
-.alert-horizontal-gradient {
+.alert-horiz-gradient {
   background: linear-gradient(to right, #c3707c 0%, #ef996b 100%); }
 
-.alert-diagonal-gradient {
+.alert-diag-gradient {
   background: linear-gradient(135deg, #c3707c 0%, #ef996b 100%); }
 
-.warning-horizontal-gradient {
+.warning-horiz-gradient {
   background: linear-gradient(to right, #ef996b 0%, #f1bf7a 100%); }
 
-.warning-diagonal-gradient {
+.warning-diag-gradient {
   background: linear-gradient(135deg, #ef996b 0%, #f1bf7a 100%); }
 
-.success-horizontal-gradient {
+.success-horiz-gradient {
   background: linear-gradient(to right, #9bcc9a 0%, #5cb5a4 100%); }
 
-.success-diagonal-gradient {
+.success-diag-gradient {
   background: linear-gradient(135deg, #9bcc9a 0%, #5cb5a4 100%); }
 
-.primary-horizontal-gradient {
+.primary-horiz-gradient {
   background: linear-gradient(to right, #62a4ae 0%, #767ea1 100%); }
 
-.primary-diagonal-gradient {
+.primary-diag-gradient {
   background: linear-gradient(135deg, #62a4ae 0%, #767ea1 100%); }
 
 h1,
@@ -474,7 +474,7 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-family: "Overpass", sans-serif;
-  font-weight: 900; }
+  font-weight: 700; }
   h1.not-capped,
   h2.not-capped,
   h3.not-capped,
@@ -539,15 +539,3 @@ i {
 strong,
 b {
   font-weight: 700; }
-
-input,
-select {
-  padding: 20px;
-  background: #fff;
-  border: 2px solid #e6e6e6;
-  border-radius: 5px;
-  font-family: "Overpass", sans-serif;
-  transition: border 200ms ease-in-out; }
-  input:focus,
-  select:focus {
-    border: 2px solid #808080; }

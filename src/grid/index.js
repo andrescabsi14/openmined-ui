@@ -1,5 +1,5 @@
 import React from 'react';
-import './grid.css';
+import './index.css';
 
 let classLoop = (obj, separator = '-') => {
   let tempClasses = [];

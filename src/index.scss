@@ -1,6 +1,6 @@
 @import 'normalize.css/normalize';
-@import 'styles/general';
-@import 'styles/colors';
+@import 'general';
+@import 'colors';
 
 html {
   box-sizing: border-box;
@@ -34,4 +34,4 @@ body {
 }
 
 // Load in the UI elements
-@import 'styles/typography';
+@import 'typography';
