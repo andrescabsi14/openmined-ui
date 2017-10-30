@@ -1,7 +1,7 @@
 {
   "name": "openmined-ui",
   "homepage": "https://openmined.org",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "license": "Apache-2.0",
   "main": "lib/index",
@@ -71,7 +71,7 @@
       "yarn build:css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start": "storybook",
     "build": "yarn build:css && node scripts/build.js",
-    "lib": "babel src --out-dir lib --copy-files --ignore *.scss",
+    "prepublish": "babel src --out-dir lib --copy-files",
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "npm-run-all -p watch:css start:storybook",
     "start:storybook": "start-storybook -p 9000",

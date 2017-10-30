@@ -1,7 +1,8 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
-# css (prefer scss)
-/src/**/*.css
+/.storybook
+/config
+/scripts
+/stories
+/src
 
 # dependencies
 /node_modules
@@ -12,7 +13,6 @@
 # production
 /build
 /storybook-static
-/lib
 
 # misc
 .DS_Store
