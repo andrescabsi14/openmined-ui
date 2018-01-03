@@ -6,7 +6,7 @@
 
 > Because data science should look good.
 
-[Check it out!](https://cereallarceny.github.io/openmined-ui/)
+[Check it out!](https://openmined.github.io/openmined-ui/)
 
 Welcome to the OpenMined UI library!  The purpose of this is to give UI developers one design language in the creation of OpenMined applications.  In the same way that our code repositories should constantly be improving, it should also be assumed that this file is a working document that will change and improve over time.  Below are a list of guidelines for how various user interface elements should be used throughout the visual design of the OpenMined ecosystem.  We encourage you to use them at will and suggest new ones in the #team_uiux channel in Slack.  Please note that it is imperative that you always consult the OpenMined brand manual first as it is the ultimate source of truth for remaining true to the brand.
 
