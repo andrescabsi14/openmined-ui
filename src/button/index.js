@@ -1,17 +1,17 @@
 // @flow
-import * as React from "react";
-import cn from "classnames";
-import "./index.css";
+import * as React from 'react';
+import cn from 'classnames';
+import './index.css';
 
 type DefaultProps = {
-  size: "small" | "medium" | "large",
+  size: 'small' | 'medium' | 'large',
   color:
-    | "light-gray"
-    | "medium-grey"
-    | "dark-gray"
-    | "black"
-    | "white"
-    | "teal",
+    | 'light-gray'
+    | 'medium-grey'
+    | 'dark-gray'
+    | 'black'
+    | 'white'
+    | 'teal',
   expanded: boolean,
   centered: boolean
 };
@@ -19,20 +19,20 @@ type DefaultProps = {
 type Props = DefaultProps & {
   children: React.Node,
   className?: string,
-  status?: "error" | "success"
+  status?: 'error' | 'success'
 };
 
 const Button = ({
   children,
-  size = "medium",
-  color = "teal",
+  size = 'medium',
+  color = 'teal',
   status,
   expanded = false,
   centered = false,
   className,
   ...otherProps
 }: Props) => {
-  const classes = cn(className, size, color, status, {
+  const classes = cn('button', className, size, color, status, {
     expanded,
     centered
   });

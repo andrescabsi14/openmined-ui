@@ -1,7 +1,7 @@
 {
   "name": "openmined-ui",
   "homepage": "https://openmined.org",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "license": "Apache-2.0",
   "main": "lib/index",

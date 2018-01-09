@@ -1,19 +1,19 @@
 // @flow
 
-import * as React from "react";
-import { withRouter } from "react-router";
-import Helmet from "react-helmet";
+import * as React from 'react';
+import { withRouter } from 'react-router';
+import Helmet from 'react-helmet';
 
 const defaultUrl =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:3000"
-    : "https://openmined.org";
-const defaultTitle = "OpenMined";
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
+    : 'https://openmined.org';
+const defaultTitle = 'OpenMined';
 const defaultDescription =
-  "OpenMined is a community focused on building technology which facilitates the decentralized ownership of data and intelligence.";
+  'OpenMined is a community focused on building technology which facilitates the decentralized ownership of data and intelligence.';
 const defaultImage = `${defaultUrl}/images/logo.png`;
-const defaultTwitter = "@openminedorg";
-const defaultSep = " | ";
+const defaultTwitter = '@openminedorg';
+const defaultSep = ' | ';
 
 type MetaTags = {
   noCrawl: boolean,
@@ -64,40 +64,40 @@ class Page extends React.Component<Props> {
     const theImage = image ? image : defaultImage;
 
     const metaTags = [
-      { itemprop: "name", content: theTitle },
-      { itemprop: "description", content: theDescription },
-      { itemprop: "image", content: theImage },
-      { name: "description", content: theDescription },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: defaultTwitter },
-      { name: "twitter:title", content: theTitle },
-      { name: "twitter:description", content: theDescription },
-      { name: "twitter:creator", content: twitter || defaultTwitter },
-      { name: "twitter:image:src", content: theImage },
-      { property: "og:title", content: theTitle },
-      { property: "og:type", content: contentType || "website" },
-      { property: "og:url", content: defaultUrl + pathname },
-      { property: "og:image", content: theImage },
-      { property: "og:description", content: theDescription },
-      { property: "og:site_name", content: defaultTitle },
-      { property: "fb:app_id", content: "120295052018408" }
+      { itemprop: 'name', content: theTitle },
+      { itemprop: 'description', content: theDescription },
+      { itemprop: 'image', content: theImage },
+      { name: 'description', content: theDescription },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: defaultTwitter },
+      { name: 'twitter:title', content: theTitle },
+      { name: 'twitter:description', content: theDescription },
+      { name: 'twitter:creator', content: twitter || defaultTwitter },
+      { name: 'twitter:image:src', content: theImage },
+      { property: 'og:title', content: theTitle },
+      { property: 'og:type', content: contentType || 'website' },
+      { property: 'og:url', content: defaultUrl + pathname },
+      { property: 'og:image', content: theImage },
+      { property: 'og:description', content: theDescription },
+      { property: 'og:site_name', content: defaultTitle },
+      { property: 'fb:app_id', content: '308339039653695' }
     ];
 
     if (noCrawl) {
-      metaTags.push({ name: "robots", content: "noindex, nofollow" });
+      metaTags.push({ name: 'robots', content: 'noindex, nofollow' });
     }
 
     if (published) {
-      metaTags.push({ name: "article:published_time", content: published });
+      metaTags.push({ name: 'article:published_time', content: published });
     }
     if (updated) {
-      metaTags.push({ name: "article:modified_time", content: updated });
+      metaTags.push({ name: 'article:modified_time', content: updated });
     }
     if (category) {
-      metaTags.push({ name: "article:section", content: category });
+      metaTags.push({ name: 'article:section', content: category });
     }
     if (tags) {
-      metaTags.push({ name: "article:tag", content: tags });
+      metaTags.push({ name: 'article:tag', content: tags });
     }
 
     return metaTags;
@@ -111,16 +111,16 @@ class Page extends React.Component<Props> {
       <div id={id} className={className}>
         <Helmet
           htmlAttributes={{
-            lang: "en",
+            lang: 'en',
             itemscope: undefined,
-            itemtype: `http://schema.org/${rest.schema || "WebPage"}`
+            itemtype: `http://schema.org/${rest.schema || 'WebPage'}`
           }}
           title={
             rest.title ? rest.title + defaultSep + defaultTitle : defaultTitle
           }
           link={[
             {
-              rel: "canonical",
+              rel: 'canonical',
               href: defaultUrl + this.props.location.pathname
             }
           ]}
