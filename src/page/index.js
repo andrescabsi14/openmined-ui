@@ -11,7 +11,11 @@ const defaultUrl =
 const defaultTitle = 'OpenMined';
 const defaultDescription =
   'OpenMined is a community focused on building technology which facilitates the decentralized ownership of data and intelligence.';
-const defaultImage = `${defaultUrl}/images/logo.png`;
+const defaultImage = 'https://s3.amazonaws.com/openmined.org/images/logo.png';
+const defaultFacebookImage =
+  'https://s3.amazonaws.com/openmined.org/images/logo-facebook.png';
+const defaultTwitterImage =
+  'https://s3.amazonaws.com/openmined.org/images/logo-twitter.png';
 const defaultTwitter = '@openminedorg';
 const defaultSep = ' | ';
 
@@ -62,6 +66,8 @@ class Page extends React.Component<Props> {
       ? description.substring(0, 155)
       : defaultDescription;
     const theImage = image ? image : defaultImage;
+    const theFacebookImage = image ? image : defaultFacebookImage;
+    const theTwitterImage = image ? image : defaultTwitterImage;
 
     const metaTags = [
       { itemprop: 'name', content: theTitle },
@@ -73,11 +79,11 @@ class Page extends React.Component<Props> {
       { name: 'twitter:title', content: theTitle },
       { name: 'twitter:description', content: theDescription },
       { name: 'twitter:creator', content: twitter || defaultTwitter },
-      { name: 'twitter:image:src', content: theImage },
+      { name: 'twitter:image:src', content: theTwitterImage },
       { property: 'og:title', content: theTitle },
       { property: 'og:type', content: contentType || 'website' },
       { property: 'og:url', content: defaultUrl + pathname },
-      { property: 'og:image', content: theImage },
+      { property: 'og:image', content: theFacebookImage },
       { property: 'og:description', content: theDescription },
       { property: 'og:site_name', content: defaultTitle },
       { property: 'fb:app_id', content: '308339039653695' }

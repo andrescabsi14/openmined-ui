@@ -1,5 +1,5 @@
-@import "../typography";
-@import "../colors";
+@import '../typography';
+@import '../colors';
 
 $button-font-size: 0.9rem;
 $button-padding: 15px;
@@ -8,7 +8,7 @@ $button-hover: 5%;
 // TODO: More specific selectors
 .button,
 button,
-input[type="submit"] {
+input[type='submit'] {
   display: inline-block;
   background: $primary-color;
   color: $white;
@@ -24,6 +24,7 @@ input[type="submit"] {
   transition: background $anim-time $anim-func;
   &:hover {
     background: darken($primary-color, $button-hover);
+    color: $white;
   }
   &.success {
     background: $success-color;
