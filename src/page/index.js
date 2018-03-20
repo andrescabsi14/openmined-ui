@@ -7,15 +7,14 @@ import Helmet from 'react-helmet';
 const defaultUrl =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000'
-    : 'https://openmined.org';
+    : 'https://www.openmined.org';
 const defaultTitle = 'OpenMined';
 const defaultDescription =
-  'OpenMined is a community focused on building technology which facilitates the decentralized ownership of data and intelligence.';
-const defaultImage = 'https://s3.amazonaws.com/openmined.org/images/logo.png';
+  'OpenMined is an open-source community focused on researching, developing, and elevating tools for secure, privacy-preserving, value-aligned artificial intelligence.';
+const defaultImage = 'https://www.openmined.org/images/logo.png';
 const defaultFacebookImage =
-  'https://s3.amazonaws.com/openmined.org/images/logo-facebook.png';
-const defaultTwitterImage =
-  'https://s3.amazonaws.com/openmined.org/images/logo-twitter.png';
+  'https://www.openmined.org/images/logo-facebook.png';
+const defaultTwitterImage = 'https://www.openmined.org/images/logo-twitter.png';
 const defaultTwitter = '@openminedorg';
 const defaultSep = ' | ';
 
@@ -49,6 +48,8 @@ class Page extends React.Component<Props> {
       title,
       description,
       image,
+      facebookImage,
+      twitterImage,
       contentType,
       twitter,
       noCrawl,
@@ -63,11 +64,28 @@ class Page extends React.Component<Props> {
       ? (title + defaultSep + defaultTitle).substring(0, 60)
       : defaultTitle;
     const theDescription = description
-      ? description.substring(0, 155)
+      ? description.substring(0, 240)
       : defaultDescription;
     const theImage = image ? image : defaultImage;
-    const theFacebookImage = image ? image : defaultFacebookImage;
-    const theTwitterImage = image ? image : defaultTwitterImage;
+
+    let theFacebookImage;
+    let theTwitterImage;
+
+    if (facebookImage) {
+      theFacebookImage = facebookImage;
+    } else if (image) {
+      theFacebookImage = image;
+    } else {
+      theFacebookImage = defaultFacebookImage;
+    }
+
+    if (twitterImage) {
+      theTwitterImage = twitterImage;
+    } else if (image) {
+      theTwitterImage = image;
+    } else {
+      theTwitterImage = defaultTwitterImage;
+    }
 
     const metaTags = [
       { itemprop: 'name', content: theTitle },
